@@ -1,0 +1,23 @@
+<% if session[:user_id] %>    
+<section class="calender">
+	<div class="container">
+		<%= month_calendar events: @tasks do |date, tasks| %>
+			<%= date.day %>
+			<% tasks.each do |task| %>
+				<div>
+					<%= link_to task.title, "/tasks/#{task.id}" %>
+				</div>
+		<% end %>
+	</div>
+</section>
+<% end %>
+<% else %>
+ <section class="welcome text-center">
+		<h2>シンプルにあなたのタスクを管理しよう</h2>
+		<p>Task on Railsは授業管理を行うためのアプリです。</p>
+		<p>様々な授業をこのアプリで管理するだけで、簡単に課題や授業日を確認することができます。</p>
+		<%= link_to(new_user_path, {class: "nav-link" }) do %>
+			<button type="button" class="btn btn-primary">新規登録</button>
+		<% end %>
+
+<% end %>

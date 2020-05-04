@@ -1,0 +1,104 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require simple_calendar
+ */
+@import "bootstrap";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+    word-break: break-word;
+    font-family: 'Varela Round', sans-serif;
+font-family: 'M PLUS Rounded 1c', sans-serif;
+  }
+.container {
+    width: 1024px;
+    max-width: 100%;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+  .flash {
+    margin: 0 auto;
+    max-width: 1024px;
+    text-align: center;
+    background-color:rgb(214, 96, 18);
+    color: white;
+
+  }
+
+
+nav {
+  width: 1024px !important;
+  margin: 0 auto !important;
+
+}
+  
+//  top
+
+.welcome {
+  h2 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+}
+.calendar {
+  .container {
+    margin-top: 50px !important;
+  }
+
+  }
+
+
+//   header
+
+#navbarNav {
+    margin-left: 500px;
+}
+
+// login-form
+
+.form-container {
+  border:solid 1px #000;
+  margin-top: 80px !important;
+  width: 350px;
+  margin:0 auto;
+  text-align: center;
+
+  .form {
+    display: block;
+    margin: 0 auto;
+  }
+  p {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  .form-btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+  }
+}
+
+// task-new
+
+.form-label {
+  margin-top: 10px;
+
+  .form-content {
+    resize: none;
+    
+  }
+}
