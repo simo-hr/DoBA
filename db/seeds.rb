@@ -11,6 +11,6 @@ end
 10.times do
   title = "授業名"
   content = Faker::Lorem.sentence(5)
-  start_time = Time.now
+  start_time = now.tomorrow
   users.each { |user| user.tasks.create!(content: content, title: title) }
 end
