@@ -1,0 +1,41 @@
+<section class="match-index">
+  <div class="container">
+
+    <div class="field search-field">
+      <%# <%= text_field_tag :search %>
+      <%= form_tag( "/matches", :method => 'get') do %>
+        <span>都道府県</span>
+        <br>
+        <%= select_tag :search, options_for_select([["大阪", "大阪"],["福岡","福岡"],["東京","東京"],["名古屋","名古屋"]]), { :prompt => "選択してください", class: "select-box"}%>
+        <br>
+        <%= submit_tag '検索', :name => nil, class: "submit-btn" %>
+      <% end %>
+    </div>
+
+    <div class="index-field">
+      <% @matches.each do |match| %>
+        <%= link_to "/matches/#{match.id}" do %>
+          <div class="match">
+            <div class="match-box">
+              <div class="match-img img-box">
+                <% if match.user.team_img %>
+                  <img src=<%= match.user.team_img %> class = "icon_image">
+                <% else %>
+                 <p>No image</p>
+                <% end %>
+              </div>
+              <div class="match-content">
+              <span class="post-time">投稿日:<%= match.updated_at.strftime("%Y-%m-%d") %></span>
+                <h3 class="match-title"><%= match.title %></h3>
+                <p class="match-user"><%= match.user.team_name %></p><br>
+                <span>試合場所:<%= match.vanue %></span><br>
+                <span class="match-time">試合日時:<%= match.match_day.strftime("%Y-%m-%d %H:%M") %>〜</span>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      <%= paginate @matches %>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+<section class="match-show">
+  <div class="container">
+    <div class="show-box">
+      <div class="show-left">
+        <div class="show-img img-box">
+          <% if @match.user.team_img %>
+            <img src=<%= @match.user.team_img %> class = "icon_image">
+          <% else %>
+            <p>No image</p>
+          <% end %>
+        </div>
+        <h4>チーム名</h4>
+        <p><%= @match.user.team_name %></p>
+        <h4>活動エリア</h4>
+        <p><%= @match.user.area %></p>
+        <h4>レベル</h4>
+        <p><%= @match.user.level %></p>
+      </div>
+      <div class="show-right">
+        <p class="show-team-name"><%= @match.user.team_name %></p>
+          <div class="match-edit">
+            <% if @match.user.id == session[:user_id] %>
+              <%= link_to "編集", edit_match_path,:style=>"color:black;" %>
+              <%= link_to "削除", match_path, method: :delete, data: { confirm: '削除しますか？' }, :style=>"color:black;" %>
+            <% end %>
+          </div>
+        <div class="show-content">
+          <p class="match-time">試合日:<%= @match.match_day.strftime("%Y-%m-%d %H:%M") %></p>
+          <h3><%= @match.title %></h3>
+          <p><%= @match.content %></p>
+          <p>開催場所:<%= @match.vanue %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

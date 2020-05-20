@@ -10,22 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_04_224925) do
+ActiveRecord::Schema.define(version: 2020_05_20_063442) do
 
-  create_table "tasks", force: :cascade do |t|
-    t.integer "user_id"
+  create_table "matches", force: :cascade do |t|
     t.text "content"
+    t.datetime "match_day"
+    t.string "title"
+    t.integer "user_id"
+    t.string "vanue"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "title"
-    t.datetime "start_time"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "email"
+    t.string "password"
+    t.string "team_name"
+    t.string "team_img"
+    t.string "area"
+    t.string "level"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "password_digest"
   end
 
 end

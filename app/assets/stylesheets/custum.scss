@@ -1,4 +1,7 @@
 @import "bootstrap";
+$main-color: rgb(86, 165, 225);
+$border-color:#ccc;
+$bg-color: #f2f2f2;
 
 *,
 *::before,
@@ -6,85 +9,463 @@
   box-sizing: border-box;
 }
 * {
-    word-break: break-word;
-    font-family: 'Varela Round', sans-serif;
-font-family: 'M PLUS Rounded 1c', sans-serif;
-  }
+  word-break: break-word;
+  font-family: 'Noto Sans JP', sans-serif;
+  letter-spacing: 2px;
+}
+
 .container {
-    width: 1024px;
-    max-width: 100%;
-    margin: 0 auto !important;
-    padding: 0 !important;
-  }
-  .flash {
-    margin: 0 auto;
-    max-width: 1024px;
-    text-align: center;
-    background-color:rgb(214, 96, 18);
-    color: white;
-
-  }
-
-
-nav {
-  width: 1024px !important;
-  margin: 0 auto !important;
-
-}
-  
-//  top
-
-.welcome {
-  h2 {
-    margin-top: 50px;
-    margin-bottom: 30px;
-  }
-}
-.calendar {
-  .container {
-    margin-top: 50px !important;
-  }
-
-  }
-
-
-//   header
-
-#navbarNav {
-    margin-left: 500px;
-}
-
-// login-form
-
-.form-container {
-  border:solid 1px #000;
-  margin-top: 80px !important;
-  width: 350px;
-  margin:0 auto;
+  max-width: 100%;
+  margin: 0 auto;
   text-align: center;
-
-  .form {
-    display: block;
-    margin: 0 auto;
+}
+body {
+  margin: 0;
+}
+.alert {
+  color: red;
+  text-align: center;
+}
+.notice {
+  color: green;
+  text-align: center;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.login-check {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  label {
+    line-height: 50px;
   }
-  p {
-    margin-top: 10px;
-    margin-bottom: 5px;
+  input {
+    margin: 19px 15px 0 0 ;
   }
-  .form-btn {
-    margin-top: 10px;
-    margin-bottom: 10px;
-
+}
+.field {
+  @mixin field-contents {
+    border-radius: 5px;
+    border: 2px solid $main-color;
+  }
+  text-align: center;
+  display: flex;
+  label {
+    width: 20%;
+    text-align: left;
+    line-height: 50px;
+  }
+  input {
+    @include field-contents;
+    width: 400px;
+    height: 50px;
+    padding-left: 15px;
+    margin-bottom: 20px;
+  }
+  textarea {
+    @include field-contents;
+    resize: none;
+  }
+  select {
+    @include field-contents;
+    height: 50px;
+    padding-left: 15px;
+    margin-bottom: 20px;
+  }
+  .select-box {
+    width: 70px;
+    text-align: center;
+    font-size: 17px;
+  }
+}
+.img-box {
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(196, 193, 193, 0.482);
+}
+.actions {
+  text-align: center;
+}
+.submit-btn {
+  width: 400px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 5px;
+  color: white;
+  background-color: $main-color;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+  a {
+    color: white;
+  }
+}
+hr {
+  margin-top: 50px;
+  width: 400px;
+}
+.pagination {     
+  margin-top: 50px;     
+  border: none;   
+  background-color: $main-color;
+  height: 50px;
+  line-height: 50px;
+  a {
+    color: white;
+  }
+  span {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .gap {
+    color: white;
   }
 }
 
-// task-new
 
-.form-label {
-  margin-top: 10px;
 
-  .form-content {
-    resize: none;
-    
+
+
+
+// header 
+.header {
+  height: 80px;
+  display: flex;
+  background-color:$main-color;
+  justify-content: space-between;
+  align-items: center;
+  .logo {
+    margin-left: 15px;
+    line-height: 80px;
+  }
+  ul {
+    padding: 0;
+    margin: 0 15px 0 0;
+    display: flex;
+    line-height: 80px;
+  }
+  li {
+    padding-right: 15px;
+  }
+  a {
+    color: white;
+  }
+}
+
+.login {
+  .field {
+    display: block;
+  }
+}
+
+//  section top
+
+.top {
+  margin: 0;
+  .catch {
+    color: black;
+    // background-image:  image-url("top-bgimg1.jpg");
+    height: 800px;
+    background-size:cover;
+    h1 {
+      font-size: 50px;
+      margin-top: 0;
+      padding-top: 100px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+  .feature {
+    margin-top: 150px;
+    img {
+      width: 300px;
+      border-radius: 50%;
+    }
+    .feature-list {
+      display: flex;
+      justify-content: space-around;
+      padding: 0;
+    }
+  }
+  .top-img2 {
+    // background-image:  image-url("top-bgimg2.jpg");
+    height: 600px;
+    background-size:cover;
+  }
+  .registration {
+    padding: 30px 0 100px 0;
+    color: white;
+    background-color: $main-color;
+    .step-box {
+      color: $main-color;
+      display: flex;
+      justify-content: center;
+      .step {
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        margin: 15px;
+        background-color: white;
+        border-radius: 50%;
+      }
+    }
+    a {
+      display: inline-block;
+      width: 400px;
+      font-size: 20px;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #ff1944;
+      border-radius: 10px;
+    }
+  }
+}
+
+
+// section mypage
+
+.mypage {
+  padding: 100px 150px 0 150px;
+  .mypage-wrap {
+    display: flex;
+    justify-content: center;
+  }
+  .my-matches {
+    margin-left: 50px;
+    padding: 0 25px;
+    border-left: 1px solid $border-color;
+    background-color: #f2f2f2;
+    text-align: left;
+    button {
+      margin-top: 25px;
+      width: 250px;
+      color: white;
+    }
+  }
+  .mypage-box {
+    display: flex;
+    border: 1px solid $border-color;
+    padding-left: 25px;
+    .user-img {
+      margin: 25px 0;
+      p {
+        margin: 0;
+        line-height: 200px;
+        color: black;
+      }
+    }
+    .user-area {
+      margin-left: 50px;
+      text-align: left;
+      .user-data {
+        display: flex;
+        .data-title {
+          margin-right: 30px;
+        }  
+      }
+    } 
+    .my-match {
+      p {
+        color: black;
+      }
+    }
+  }
+  .icon_image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+}
+
+// section user-edit,sign-up
+.user-edit, .sign-up {
+  padding: 100px 150px 0 150px;
+  label {
+    width: 20%;
+    text-align: left;
+    height: 50px;
+    margin-left: 150px;
+  }
+  span {
+    width: 20%;
+    text-align: left;
+  }
+  .field-checkbox,.file-field {
+    display: flex;
+    height: 50px;
+  }
+  .actions {
+    display: flex;
+    justify-content: center;
+    .submit-btn {
+      width: 300px;
+      display: inline-block;
+      line-height: 50px;
+      margin-left: 30px;
+    }
+  }
+}
+
+// section match-post
+
+.match-post {
+  padding: 100px 150px;
+  .field {
+    display: flex;
+    input,textarea {
+      width: 800px;
+    }
+    #text {
+      display: none;
+    }
+    .match-time {
+      width: 70px;
+      text-align: center;
+      font-size: 17px;
+      margin-right: 10px;
+    }
+    textarea {
+      height: 300px;
+    }
+    .content-1 {
+      text-align: left;
+      width: 15%;
+    }
+    .content-3 {
+      margin-top: 120px;
+    }
+    .sub-field {
+      display: inline-block;
+      width: 800px;
+    }
+  }
+}
+
+// section match index 
+.match-index {
+  padding: 0 150px 100px 150px;
+  .container {
+    display: flex;
+    width: 100%;
+  }
+  .search-field {
+    width: 30%;
+    padding: 15px !important;
+    margin-right: 100px;
+    background-color: $bg-color;
+    border: 1px solid $border-color;
+    .select-box {
+      width: 270px;
+    }
+    .submit-btn {
+      width: 270px;
+      padding: 0px;
+    }
+  }
+  .index-field {
+    width: 70%;
+  }
+  input {
+    height: 40px;
+  }
+  .submit-btn {
+    width: 40px;
+  }
+  .match {
+    margin-top: 15px;
+    hr {
+      width: 100%;
+      margin: 30px 0;
+    }
+    .match-box {
+      padding: 15px;
+      color: black;
+      display: flex;
+      border: 1px solid $border-color;
+      .match-img{
+        margin-right: 50px;
+        p {
+          line-height: 200px;
+          margin: 0;
+        }
+      }
+      .match-content {
+        color: black;
+        text-align: left;
+        .post-time {
+          color: rgba(196, 193, 193, 1);
+        } 
+        .match-title {
+          margin-bottom: 10px;
+        }
+        .match-time {
+          color: red;
+        }
+      }
+    }
+  }
+}
+
+// section match-show
+
+.match-show {
+  padding: 100px 150px;
+  .show-box {
+    display: flex;
+    border: 1px solid $border-color;
+    .show-left {
+      padding: 25px;
+      background-color: $bg-color;
+      border-right: 1px solid $border-color;
+      text-align: left;
+      .show-img {
+        margin-bottom: 25px;
+        background-color: white;
+        border: none;
+        p {
+          line-height: 200px;
+          text-align: center;
+        }
+      }
+      h4 {
+        margin: 0;
+      }
+      p {
+        margin-top: 0;
+      }
+    }
+    .show-right {
+      width: 100%;
+      text-align: left;
+      .match-edit {
+        text-align: right;
+        margin-right: 30px;
+      }
+      .show-team-name {
+        display: block;
+        margin: 0;
+        padding: 25px;
+        font-size: 20px;
+        text-align: center;
+        border-bottom: 1px solid $border-color;
+      }
+      .show-content {
+        padding: 20px 50px;
+        .match-time {
+          color: red;
+        }
+      }
+    }
   }
 }

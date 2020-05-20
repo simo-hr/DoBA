@@ -1,0 +1,38 @@
+<section class="match-post">
+  <div class="container">
+    <h2>募集を編集する</h2>
+    <%= form_for(@match, url: { controller: :matches, action: :update }) do |f| %>
+      <ul>
+        <li>
+          <div class="field">
+            <%= f.label :"試合日", class: "content-1" %>
+            <%= f.date_select :match_day, {start_hour: 8, end_hour: 21, minute_step: 15, time_separator: '', datetime_separator: '　　　時間'}, class: "match-time" %>
+          </div>
+        </li>
+        <li>
+          <div class="field">
+            <%= f.label :"開催場所", class: "content-1" %>
+            <%= f.text_field :vanue  %>
+          </div>
+        </li>
+        <li>
+          <div class="field">
+            <%= f.label :"募集タイトル", class: "content-1" %>
+            <%= f.text_field :title, class: "content-2" %>
+          </div>
+        </li>
+        <li>
+          <div class="field">
+            <%= f.label :"募集内容", class: "content-1 content-3" %>
+            <div class="sub-field">
+              <span>開催日時、当日の予定、施設などの詳細をご記入ください</span><%= f.text_area :content, class: "content-2" %>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="actions">
+        <%= f.submit "募集する", class: "submit-btn" %>
+      </div>
+    <% end %>
+  </div>
+</section>

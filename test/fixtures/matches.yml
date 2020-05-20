@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyText
+  match_day: 2020-05-20 15:34:42
+  title: MyString
+  user_id: 1
+  vanue: MyString
+
+two:
+  content: MyText
+  match_day: 2020-05-20 15:34:42
+  title: MyString
+  user_id: 1
+  vanue: MyString

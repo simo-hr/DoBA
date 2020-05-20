@@ -1,5 +1,9 @@
 class User < ApplicationRecord
-	has_secure_password
-	has_many :tasks, dependent: :destroy
-	validates :name, presence: true, uniqueness: true
+  mount_uploader :team_img, ImageUploader
+  has_many :matches, dependent: :destroy
+  validates :email ,presence: true
+  validates :password ,presence: true
+
+
+  
 end

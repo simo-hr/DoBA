@@ -1,0 +1,41 @@
+<section class="mypage">
+  <div class="container">
+    <div class="mypage-wrap">
+      <div class="mypage-box">
+        <div class="user-img img-box">
+          <% if @user.team_img %>
+            <img src=<%= @user.team_img %> class = "icon_image">
+          <% else %>
+            <%= link_to("/users/#{session[:user_id]}/edit")do %>
+              <p class="img-message">画像を登録してください</p>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="user-area">
+          <h3><%= @user.team_name %></h3>
+          <div class="user-data">
+            <div class="data-title">
+              <p>活動エリア</p>
+              <p>レベル</p>
+            </div>
+            <div class="data-content">
+              <p><%= @user.area %></p>
+              <p><%= @user.level %></p>
+            </div>
+          </div>
+        </div>
+        <div class="my-matches">
+          <button class="submit-btn"><li class="header-item"><%= link_to "試合相手を募集する", "/matches/new" %></li> </button>
+          <h3>募集中の試合</h3>
+          <% @user.matches.each do |match| %>
+            <div class="my-match">
+              <%= link_to("/matches/#{match.id}") do %>
+                <p><%= match.title %></p>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

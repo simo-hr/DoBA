@@ -1,0 +1,49 @@
+<section class="user-edit">
+  <div class="container">
+    <h2>ユーザー情報登録</h2>
+    <%= form_for(@user, url: {controller: 'users', action: 'update'}) do |f| %>
+      <%= render "layouts/error_messages" %>
+
+      <div class="file-field">
+        <%= f.label :"チーム画像" %><br />
+        <%= f.file_field :team_img, class: "file-btn" %>
+      </div>
+      <div class="field">
+        <%= f.label :"チーム名" %><br />
+        <%= f.text_field :team_name %>
+      </div>
+      <div class="field">
+        <%= f.label :"活動エリア" %><br />
+        <%= f.select :area, options_for_select([["大阪", "大阪"],["福岡","福岡"],["東京","東京"],["名古屋","名古屋"]]), { :prompt => "選択してください", class: "select-box"} %>
+      </div>
+
+      
+      <div class="field-checkbox">
+        <%= f.label :雰囲気 %>
+        <div class="radio-button">
+          <% ["みんなで楽しく","ほどよくガチ","ガチガチ"].each do |level| %>
+            <%= f.radio_button :level, level %>
+            <%= level %>
+          <% end %>
+        </div>
+      </div>
+
+
+
+
+      <div class="field">
+        <%= f.label :"メールアドレス" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+
+
+      <div class="actions">
+        <li class="header-item"><%= link_to "マイページへ", "/users/show", class: "submit-btn" %></li> 
+        <%= f.submit "この内容で登録する", class: "submit-btn" %>
+      </div>
+    <% end %>
+
+  </div>
+</section>
+

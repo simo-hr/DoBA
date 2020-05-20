@@ -1,9 +1,68 @@
-<div class="container">
-	<% if session[:user_id] %>
-		<%= render 'user_home'%>
-	<% else %>
-	
-		<% end %>
-	<% end %>
-	</section>
-</div>
+<section class="top">
+  <div class="container">
+    <div class="catch">
+      <h1>バスケットボール専門の<br>試合相手マッチングサービス</h1>
+      <p>試合相手が欲しいけどなかな見つからない。
+        <br>スケジュール調整・確認が大変。
+        <br>試合をするための事務的な作業を簡単に。
+        <br>そんな想いからMatch Matchが生まれました。
+      </p>
+    </div>
+
+    <div class="about">
+      <h2>MatchMatchとは</h2>
+      <p>
+        MatchMatchは、試合相手を探している社会人チームや大学生のサークル同士をマッチングするサービスです。
+        <br>
+        <br>
+        <br>
+        試合相手が欲しいけど、なかなか見つからない。試合相手が見つかってもスケジュールが合わない。
+        <br>
+        ただ試合がしたいだけなのに、多くの労力を費やしているチームがたくさんいると思います。
+        <br>
+        <br>
+        <br>
+        Match Matchを利用すれば、簡単に試合相手を探すことができます。
+        <br>
+        また、試合日程を予め決めておくことで、その日に確実に試合できるチームとマッチングできます。
+      </p>
+    </div>
+
+    <div class="feature">
+      <h2>MatchMatchの特徴</h2>
+      <ul class="feature-list">
+        <li class="feature-list-item">
+          <%= image_tag 'top-img1.jpg' %>
+          <h3>試合相手を募集</h3>
+          <p></p>
+        </li>
+        <li class="feature-list-item">
+          <%= image_tag 'top-img3.jpg' %>
+          <h3>試合相手を募集している<br>チームを見つける</h3>
+          <p></p>
+        </li>
+        <li class="feature-list-item">
+          <%= image_tag 'top-img2.jpg' %>
+          <h3>マッチした相手とやりとり</h3>
+          <p></p>
+        </li>
+      </ul>
+    </div>
+
+    <section class="top-img2"></section>
+
+    <section class="registration">
+      <div class="container">
+        <div class="induction">
+          <h2>2STEPで簡単登録</h2>
+          <div class="step-box">
+            <div class="step1 step"><span>1.アカウント登録</span></div>
+            <div class="step2 step"><span>2.チーム情報登録</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </div>  
+</section>
