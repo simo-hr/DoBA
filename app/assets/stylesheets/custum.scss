@@ -40,6 +40,9 @@ li {
 }
 a {
   text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
 .login-check {
   display: flex;
@@ -175,7 +178,7 @@ hr {
   margin: 0;
   .catch {
     color: black;
-    // background-image:  image-url("top-bgimg1.jpg");
+    background-image:  image-url("top-bgimg1.jpg");
     height: 800px;
     background-size:cover;
     h1 {
@@ -200,7 +203,7 @@ hr {
     }
   }
   .top-img2 {
-    // background-image:  image-url("top-bgimg2.jpg");
+    background-image:  image-url("top-bgimg2.jpg");
     height: 600px;
     background-size:cover;
   }

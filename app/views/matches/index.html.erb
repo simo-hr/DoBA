@@ -18,10 +18,10 @@
           <div class="match">
             <div class="match-box">
               <div class="match-img img-box">
-                <% if match.user.team_img %>
-                  <img src=<%= match.user.team_img %> class = "icon_image">
-                <% else %>
+                <% if match.user.team_img.blank? %>
                  <p>No image</p>
+                <% else %>
+                  <img src=<%= match.user.team_img %> class = "icon_image">
                 <% end %>
               </div>
               <div class="match-content">

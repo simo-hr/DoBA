@@ -3,12 +3,12 @@
     <div class="mypage-wrap">
       <div class="mypage-box">
         <div class="user-img img-box">
-          <% if @user.team_img %>
-            <img src=<%= @user.team_img %> class = "icon_image">
-          <% else %>
+          <% if @user.team_img.blank? %>
             <%= link_to("/users/#{session[:user_id]}/edit")do %>
               <p class="img-message">画像を登録してください</p>
             <% end %>
+          <% else %>
+            <img src=<%= @user.team_img %> class = "icon_image">
           <% end %>
         </div>
         <div class="user-area">

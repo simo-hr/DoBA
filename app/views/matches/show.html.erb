@@ -3,10 +3,10 @@
     <div class="show-box">
       <div class="show-left">
         <div class="show-img img-box">
-          <% if @match.user.team_img %>
-            <img src=<%= @match.user.team_img %> class = "icon_image">
-          <% else %>
+          <% if @match.user.team_img.blank? %>
             <p>No image</p>
+          <% else %>
+            <img src=<%= @match.user.team_img %> class = "icon_image">
           <% end %>
         </div>
         <h4>チーム名</h4>
