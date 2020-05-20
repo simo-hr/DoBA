@@ -1,14 +1,25 @@
-<%= form_for(@user, url: { controller: :users, action: :create }) do |f| %>
-	<div class="form-container">
-	<%= render 'layouts/error_messages', f: f.object %>
-			
-	<%= f.label :email %>
-	<%= f.text_field :email, class: 'form' %>
-	
-	<%= f.label :password %>
-	<%= f.password_field :password, class: 'form' %>
 
-	<%= f.submit "新規登録", class: "submit-btn" %>
-	</div>
-<% end %>
 
+<section class="sign-up">
+  <div class="container">
+    <h2>新規登録</h2>
+  	<%= form_for(@user, url: { controller: :users, action: :create }) do |f| %>
+
+      <div class="field">
+        <%= f.label :"メールアドレス" %><br />
+				<%= f.text_field :email, class: 'form' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :"パスワード" %><br />
+				<%= f.password_field :password, class: 'form' %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "登録する", class: "submit-btn" %>
+      </div>
+
+    <% end %>
+
+  </div>
+</section>  

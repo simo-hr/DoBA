@@ -1,9 +1,21 @@
-<%= form_tag("/login") do %>
-	<div class="form-container">
-	<p>ユーザー名</p>
-    <input type="text" class="form" name="email">
-	<p>パスワード</p>
-    <input type="password" class="form" name="password">
-		<input type="submit" value="ログイン" class="form-btn btn btn-primary">
-	</div>
-<% end %>
+<section class="login">
+  <div class="container">
+    <h2>ログイン</h2>
+    <%= form_tag("/login") do %>
+      <div class="field">
+        <label>ユーザー名</label><br>
+				<input type="text" class="form" name="email">
+      </div>
+
+      <div class="field">
+        <label>パスワード</label><br>
+				<input type="password" class="form" name="password">
+      </div>
+
+      <div class="actions">
+				<input type="submit" value="ログイン" class="submit-btn">
+      </div>
+    <% end %>
+
+  </div>
+</section>

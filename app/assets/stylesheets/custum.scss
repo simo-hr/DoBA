@@ -17,6 +17,7 @@ $bg-color: #f2f2f2;
 .container {
   max-width: 100%;
   margin: 0 auto;
+  padding: 0;
   text-align: center;
 }
 body {
@@ -232,6 +233,15 @@ hr {
   }
 }
 
+// section login
+.login {
+  .field {
+    label {
+      width: 7%;
+    }
+  }
+  
+}
 
 // section mypage
 
