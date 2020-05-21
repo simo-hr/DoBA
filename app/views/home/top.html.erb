@@ -2,17 +2,17 @@
   <div class="container">
     <div class="catch">
       <h1>バスケットボール専門の<br>試合相手マッチングサービス</h1>
-      <p>試合相手が欲しいけどなかな見つからない。
+      <p class="mt-5">試合相手が欲しいけどなかな見つからない。
         <br>スケジュール調整・確認が大変。
         <br>試合をするための事務的な作業を簡単に。
-        <br>そんな想いからMatch Matchが生まれました。
+        <br>そんな想いから<%= @app_name %>が生まれました。
       </p>
     </div>
 
     <div class="about">
-      <h2>MatchMatchとは</h2>
+      <h2><%= @app_name %>とは</h2>
       <p>
-        MatchMatchは、試合相手を探している社会人チームや大学生のサークル同士をマッチングするサービスです。
+        <%= @app_name %>は、試合相手を探している社会人チームや大学生のサークル同士をマッチングするサービスです。
         <br>
         <br>
         <br>
@@ -22,14 +22,14 @@
         <br>
         <br>
         <br>
-        Match Matchを利用すれば、簡単に試合相手を探すことができます。
+        <%= @app_name %>を利用すれば、簡単に試合相手を探すことができます。
         <br>
         また、試合日程を予め決めておくことで、その日に確実に試合できるチームとマッチングできます。
       </p>
     </div>
 
     <div class="feature">
-      <h2>MatchMatchの特徴</h2>
+      <h2><%= @app_name %>の特徴</h2>
       <ul class="feature-list">
         <li class="feature-list-item">
           <%= image_tag 'top-img1.jpg' %>
@@ -41,11 +41,16 @@
           <h3>試合相手を募集している<br>チームを見つける</h3>
           <p></p>
         </li>
+				<%#
         <li class="feature-list-item">
           <%= image_tag 'top-img2.jpg' %>
-          <h3>マッチした相手とやりとり</h3>
+         <%# <h3></h3>
           <p></p>
         </li>
+				
+				%>
+
+
       </ul>
     </div>
 
@@ -59,7 +64,9 @@
             <div class="step1 step"><span>1.アカウント登録</span></div>
             <div class="step2 step"><span>2.チーム情報登録</span></div>
           </div>
-					<%= link_to "Match Matchをはじめる", "/users/new", style: "color:white" %>
+					<%= link_to("/users/new", style: "color:white")do %>
+						<%= @app_name %>をはじめる
+					<% end %>
         </div>
       </div>
     </section>

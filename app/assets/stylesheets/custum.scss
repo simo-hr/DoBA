@@ -26,10 +26,12 @@ body {
 .alert {
   color: red;
   text-align: center;
+  margin: 0;
 }
 .notice {
   color: green;
   text-align: center;
+  margin: 0;
 }
 img {
   max-width: 100%;
@@ -149,8 +151,10 @@ hr {
   justify-content: space-between;
   align-items: center;
   .logo {
-    margin-left: 15px;
+    margin-left: 40px;
     line-height: 80px;
+    font-size: 45px;
+    font-family: 'Josefin Sans', sans-serif;
   }
   ul {
     padding: 0;
@@ -176,6 +180,9 @@ hr {
 
 .top {
   margin: 0;
+  h2 {
+    margin-top: 100px;
+  }
   .catch {
     color: black;
     background-image:  image-url("top-bgimg1.jpg");
@@ -195,6 +202,9 @@ hr {
     img {
       width: 300px;
       border-radius: 50%;
+    }
+    h2 {
+      margin-bottom: 50px;
     }
     .feature-list {
       display: flex;

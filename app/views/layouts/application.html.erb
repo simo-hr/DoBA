@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rails</title>
+    <title>MatchMatch</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,8 +13,10 @@
 
   <body>
     <%= render "layouts/header" %>
-    <% if notice || alert %>
+    <% if notice %>
       <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
       <p class="alert"><%= alert %></p>
     <% end %>
     <%= yield %>
