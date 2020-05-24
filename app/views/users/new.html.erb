@@ -1,17 +1,15 @@
-
-
 <section class="sign-up">
   <div class="container">
-    <h2>新規登録</h2>
+    <h2 class="mt-5 mb-5">新規登録</h2>
   	<%= form_for(@user, url: { controller: :users, action: :create }) do |f| %>
 
       <div class="field">
-        <%= f.label :"メールアドレス" %><br />
+        <%= f.label :"メールアドレス", class: "text-center" %><br />
 				<%= f.text_field :email, class: 'form' %>
       </div>
 
       <div class="field">
-        <%= f.label :"パスワード" %><br />
+        <%= f.label :"パスワード", class: "text-center" %><br />
 				<%= f.password_field :password, class: 'form' %>
       </div>
 

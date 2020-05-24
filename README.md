@@ -1,24 +1,25 @@
-# README
+概要
+Doba
+バスケットボール専門の試合相手募集サイトです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+バージョン
+Ruby 2.6.5
+Rails 6.0.3
 
-Things you may want to cover:
+実装機能
 
-* Ruby version
+募集関連
+募投稿機能
+削除機能
+編集機能
+一覧表示機能
+詳細表示機能
+キーワード検索機能
 
-* System dependencies
+ユーザー関連
+新規登録機能
+マイページ機能
+編集機能
+画像アップロード機能
+ログイン・ログアウト機能
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

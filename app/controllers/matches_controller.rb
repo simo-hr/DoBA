@@ -1,5 +1,5 @@
 class MatchesController < ApplicationController
-  before_action :has_user_infomations?, only: [:new, :show]
+  before_action :has_user_infomations?, only: [:new]
 
 
   def index
@@ -7,7 +7,12 @@ class MatchesController < ApplicationController
   end
   
   def show
+    if current_user.nil?
+      flash[:alert] = "ログインしてください"
+      redirect_to "/matches"
+    else
     @match = Match.find_by(id: params[:id])
+    end
   end
 
   def new

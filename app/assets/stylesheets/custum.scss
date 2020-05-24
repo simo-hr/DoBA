@@ -170,7 +170,7 @@ hr {
   }
 }
 
-.login {
+.login, .sign-up {
   .field {
     display: block;
   }
@@ -311,8 +311,8 @@ hr {
   }
 }
 
-// section user-edit,sign-up
-.user-edit, .sign-up {
+// section user-edit
+.user-edit {
   padding: 100px 150px 0 150px;
   label {
     width: 20%;
