@@ -12,7 +12,7 @@
           <% end %>
         </div>
         <div class="user-area">
-          <h3 class="mt-3 mb-4"><%= @user.team_name %></h3>
+          <h3 class="mt-5 mb-4"><%= @user.team_name %></h3>
           <div class="user-data">
             <div class="data-title">
               <p>活動エリア</p>
@@ -24,8 +24,8 @@
             </div>
           </div>
         </div>
-        <div class="my-matches">
-          <button class="submit-btn"><li class="header-item"><%= link_to "試合相手を募集する", "/matches/new" %></li> </button>
+        <div class="my-matches pt-3">
+          <button class="submit-btn mb-4"><li class="header-item"><%= link_to "メッセージ", "/users/#{@user.id}/messages" %></li> </button>
           <h3 class="mt-3">募集中の試合</h3>
           <% @user.matches.each do |match| %>
             <div class="my-match">
@@ -34,6 +34,7 @@
               <% end %>
             </div>
           <% end %>
+          <button class="submit-btn mb-4"><li class="header-item"><%= link_to "試合相手を募集する", "/matches/new" %></li> </button>
         </div>
       </div>
     </div>

@@ -126,6 +126,7 @@ hr {
   background-color: $main-color;
   height: 50px;
   line-height: 50px;
+  justify-content: center;
   a {
     color: white;
   }
@@ -244,16 +245,6 @@ hr {
       border-radius: 10px;
     }
   }
-}
-
-// section login
-.login {
-  .field {
-    label {
-      width: 7%;
-    }
-  }
-  
 }
 
 // section mypage
@@ -489,6 +480,31 @@ hr {
           color: red;
         }
       }
+    }
+  }
+}
+
+// section message-new
+.message-new {
+  #message_content {
+    width: 600px;
+    height: 300px;
+  }
+}
+
+.message-form {
+  padding: 100px 150px;
+  .message-box {
+    border: 1px solid $border-color;
+    .item {
+      padding: 10px;
+      border-bottom: 1px solid $border-color ;
+    }
+    .content {
+      padding: 10px;
+    }
+    .fas {
+      border-right: 1px solid $border-color;
     }
   }
 }

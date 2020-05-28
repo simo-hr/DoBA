@@ -1,0 +1,19 @@
+<section class="message-form">
+  <div class="container text-left">
+    <h2>メッセージボックス</h2>
+    <% @messages.each do |message| %>
+      <div class="message-box mb-4">
+        <div class="item">from:<%= link_to message.user.team_name, "/users/#{message.user_id}" %></div>
+        <div class="item"><%= message.created_at.strftime("%Y-%m-%d %H:%M") %></div>
+        <div class="item content"><%= message.content %></div>
+        <% if @current_user.id == message.receive_user_id %>
+          <%= link_to user_message_path(@current_user, message), method: :delete, data: { confirm: "削除しますか？" }, class: 'btn　btn-xs' do %>
+            <i class="fas fa-trash-alt p-2"></i>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+  

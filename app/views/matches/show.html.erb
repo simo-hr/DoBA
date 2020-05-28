@@ -29,6 +29,7 @@
           <h3><%= @match.title %></h3>
           <p><%= @match.content %></p>
           <p>開催場所:<%= @match.vanue %></p>
+          <%= link_to "メッセージを送る", "/users/#{@match.user_id}/messages/new" %>
         </div>
       </div>
     </div>

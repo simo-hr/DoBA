@@ -5,7 +5,7 @@
         <li class="header-item"><%= link_to "募集する", "/matches/new" %></li> 
         <li class="header-item"><%= link_to "相手を探す", "/matches" %></li> 
         <li class="header-item"><%= link_to "ユーザー情報", "/users/#{session[:user_id]}/edit" %></li> 
-        <li class="header-item"><%= link_to "マイページ", "/users/show" %></li> 
+        <li class="header-item"><%= link_to "マイページ", "/users/#{session[:user_id]}" %></li> 
         <li class="header-item"><%= link_to "ログアウト", "/logout", method: :delete %></li> 
       </ul>
     <% else %>

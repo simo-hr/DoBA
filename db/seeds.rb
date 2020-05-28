@@ -1,18 +1,18 @@
 # User.create!(id: 1
 #              team_name: "Mypacers",
-#              email: "pacers@match.com",
+#              email: "pacers@doba.com",
 #              password: "password",
 #              area: "大阪",
 #              level: "ほどよくガチ")
 # User.create!(id: 2
 #              team_name: "東京Victory",
-#              email: "victory@match.com",
+#              email: "victory@doba.com",
 #              password: "password",
 #              area: "東京",
 #              level: "ガチガチ")
 # User.create!(id: 3
-#              team_name:  "株式会社マッチ　バスケ部",
-#              email: "company-match@match.com",
+#              team_name:  "株式会社デューバ　バスケ部",
+#              email: "company-doba@doba.com",
 #              password: "password",
 #              area: "福岡",
 #              level: "ほどよくガチ")
@@ -38,6 +38,6 @@ users = User.order(:created_at)
   match_day = Time.zone.now
   content = "試合内容#{n}"
   user_id = n
-  vanue = ["東京", "大阪",  "福岡"]
+  vanue = ["東京", "大阪", "福岡", "名古屋"]
   users.each { |user| user.matches.create!(content: content, vanue: vanue.sample, title: title, match_day: match_day) }
 end
