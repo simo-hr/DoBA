@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   delete '/logout' => 'users#logout'
 
   root 'home#top'
-  resources :matches 
-  resources :users do
+  resources :matches, only: [:index, :new, :create, :show, :edit, :update, :destroy] 
+  resources :users, only: [:index, :new, :create, :show, :edit, :update] do
     resources :messages, only: [:index, :new, :create, :destroy]
     end
 end

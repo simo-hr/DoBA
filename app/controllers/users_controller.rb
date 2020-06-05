@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
+  before_action :ensure_current_user, only: [:update]
 
-  
   def show
-    @user = current_user
+    @user = User.find_by(id: params[:id])
     @matches = @user.matches
   end
 

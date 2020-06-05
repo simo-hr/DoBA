@@ -344,10 +344,17 @@ hr {
       display: none;
     }
     .match-time {
-      width: 70px;
-      text-align: center;
+      width: 60px;
       font-size: 17px;
+      padding-left: 10px;
       margin-right: 10px;
+    }
+    #match_match_day_1i {
+      width: 80px;
+    }
+    #match_vanue {
+      width: 200px;
+      padding-left: 10px;
     }
     textarea {
       height: 300px;
@@ -375,10 +382,38 @@ hr {
   }
   .search-field {
     width: 30%;
+    min-height: 800px;
     padding: 15px !important;
     margin-right: 100px;
     background-color: $bg-color;
     border: 1px solid $border-color;
+    .d-flex {
+      i {
+        width: 30px;
+        height: 40px;
+        background-color: #fff;
+        color: $main-color;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border: 2px solid $main-color;
+        border-right: none;
+        padding-top: 10px;
+        padding-left: 5px;
+        &:before {
+        }
+      }
+      #serch {
+        width: 240px;
+        padding-left: 5px;
+        border-left: none;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        &:focus {
+          outline: none;
+          border-left: none;
+        }
+      }
+    }
     .select-box {
       width: 270px;
     }
@@ -502,9 +537,6 @@ hr {
     }
     .content {
       padding: 10px;
-    }
-    .fas {
-      border-right: 1px solid $border-color;
     }
   }
 }

@@ -4,11 +4,13 @@
     <div class="field search-field">
       <%# <%= text_field_tag :search %>
       <%= form_tag( "/matches", :method => 'get') do %>
+        <span class="d-flex"><i class="fas fa-search fa-lg" ></i><%= text_field_tag :serch %></span>
+        <br>
         <span>都道府県</span>
         <br>
         <%= select_tag :search, options_for_select([["大阪", "大阪"],["福岡","福岡"],["東京","東京"],["名古屋","名古屋"]]), { :prompt => "選択してください", class: "select-box"}%>
         <br>
-        <%= submit_tag '検索', :name => nil, class: "submit-btn" %>
+        <%= submit_tag '検索', :name => nil, class: "submit-btn serch" %>
       <% end %>
     </div>
 

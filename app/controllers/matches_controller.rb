@@ -1,5 +1,6 @@
 class MatchesController < ApplicationController
   before_action :has_user_infomations?, only: [:new]
+  before_action :ensure_current_user, only: [:update]
 
 
   def index
@@ -38,7 +39,7 @@ class MatchesController < ApplicationController
   def update
     @match = Match.find_by(id: params[:id])
     if @match.update_attributes(match_params)
-      flash[:notice] = "募集内容を更新しました"
+      flash.now[:notice] = "募集内容を更新しました"
       redirect_to "/matches/#{@match.id}"
     else
       render 'edit'
@@ -48,12 +49,8 @@ class MatchesController < ApplicationController
   def destroy
     Match.find(params[:id]).destroy
     flash[:alert] = "募集を削除しました"
-    redirect_to "/users/show"
+    redirect_to "/users/#{@current_user.id}"
   end
-
-    
-  
-
 
   private
 
@@ -62,9 +59,9 @@ class MatchesController < ApplicationController
   end
 
   def has_user_infomations?
-    if current_user.team_name == nil || current_user.area == nil || current_user.level == nil
+    if current_user.team_name == "" || current_user.area == "" || current_user.level == "" || current_user.team_name == nil || current_user.area == nil || current_user.level == nil
       flash[:alert] = "ユーザー情報を登録してください"
-      redirect_to "/users/edit"
+      redirect_to "/users/#{current_user.id}/edit"
     end
   end
   

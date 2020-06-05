@@ -5,4 +5,11 @@ class ApplicationController < ActionController::Base
       @current_user ||= User.find_by(id: session[:user_id])
     end
   end
+
+  def ensure_current_user
+    if @current_user.id != params[:id].to_i
+      flash[:alert] = "エラーが発生しました"
+      redirect_to root_url
+    end 
+  end
 end
