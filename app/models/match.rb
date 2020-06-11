@@ -8,7 +8,7 @@ class Match < ApplicationRecord
 
   def self.search(search)
     return Match.all unless search
-    Match.where(['content LIKE ? OR title LIKE ? OR vanue LIKE ? OR match_day LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"])
+    Match.where(['content LIKE ? OR title LIKE ? OR vanue LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%"])
   end
 
   
