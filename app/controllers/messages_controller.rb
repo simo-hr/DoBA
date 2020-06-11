@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
   end
 
   def new
-    @user = User.find_by(params[:user_id])
+    @user = User.find_by(params[:id])
     send_ids = @current_user.messages.where(receive_user_id: @user.id).pluck(:id)
     receive_ids = @user.messages.where(receive_user_id: @current_user.id).pluck(:id)
     @messages = Message.where(id: send_ids + receive_ids).order(created_at: :desc)
