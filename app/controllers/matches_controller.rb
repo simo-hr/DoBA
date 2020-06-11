@@ -1,6 +1,5 @@
 class MatchesController < ApplicationController
   before_action :has_user_infomations?, only: [:new]
-  before_action :ensure_current_user, only: [:update]
 
 
   def index

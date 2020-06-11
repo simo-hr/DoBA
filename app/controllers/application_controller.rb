@@ -6,10 +6,4 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def ensure_current_user
-    if @current_user.id != params[:id].to_i
-      flash[:alert] = "エラーが発生しました"
-      redirect_to root_url
-    end 
-  end
 end
