@@ -25,10 +25,7 @@ Ruby on Railsで制作したアプリとなります
 
 その他<br>
 現在開発中であり、検索機能の拡張やメッセージ機能の改善を行っていきます。<br>
-また、AWSでのデプロイも予定しています。
 
-作者<br>
-下川　博礼
 
 ライセンス<br>
 This project is licensed free.<br>
