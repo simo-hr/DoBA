@@ -444,6 +444,11 @@ hr {
       border: 1px solid $border-color;
       .match-img{
         margin-right: 50px;
+        .icon_image {
+          height: 200px;
+          width: auto;
+          object-fit: cover;
+        }
         p {
           line-height: 200px;
           margin: 0;
