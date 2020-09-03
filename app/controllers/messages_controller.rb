@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @messages = Message.where(receive_user_id: @user.id).order(created_at: :desc)
+    @sent_messages = Message.where(user_id: @user.id).order(created_at: :desc)
     # @user = User.find_by(params[:id])
     # @messages = Message.where(receive_user_id: @user).order(created_at: :desc)
 
