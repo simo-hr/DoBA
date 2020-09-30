@@ -1,8 +1,8 @@
 <section class="message-form">
   <div class="container text-left">
     <h2>メッセージボックス</h2>
-    <% @messages.each do |message| %>
       <p>受信メッセージ</p>
+    <% @messages.each do |message| %>
       <div class="message-box mb-4">
         <div class="item">from:<%= link_to message.user.team_name, "/users/#{message.user_id}" %></div>
         <div class="item"><%= message.created_at.strftime("%Y-%m-%d %H:%M") %></div>
@@ -15,10 +15,10 @@
       </div>
     <% end %>
 
-      <% @sent_messages.each do |sent_message| %>
       <p>送信メッセージ</p>
+    <% @sent_messages.each do |sent_message| %>
       <div class="message-box mb-4">
-        <div class="item">from:<%= link_to sent_message.user.team_name, "/users/#{sent_message.user_id}" %></div>
+        <div class="item">to:<%= link_to sent_message.receive_user.team_name, "/users/#{sent_message.receive_user_id}" %></div>
         <div class="item"><%= sent_message.created_at.strftime("%Y-%m-%d %H:%M") %></div>
         <div class="item content"><%= sent_message.content %></div>
         <% if @current_user.id == sent_message.receive_user_id %>
@@ -28,6 +28,9 @@
         <% end %>
       </div>
     <% end %>
+
+
+
   </div>
 
 </section>
